@@ -5,9 +5,12 @@ export const metadata = {
   title: 'Abdulrahman Safweh | Portfolio',
   description: 'Software Developer Portfolio - Next.js, React, PHP, Flutter',
   icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png',
+    icon: [
+      { url: '/icon.png?v=3', type: 'image/png', sizes: '32x32' },
+      { url: '/icon.png?v=3', type: 'image/png', sizes: '16x16' },
+    ],
+    shortcut: ['/icon.png?v=3'],
+    apple: ['/icon.png?v=3'],
   },
 }
 
