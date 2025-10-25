@@ -29,7 +29,7 @@ export default function Contact() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
-          className="inline-flex items-center gap-2 rounded-lg bg-surface text-primary px-5 py-3 font-medium transition hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          className="inline-flex items-center gap-2 rounded-lg bg-surface text-primary px-5 py-3 font-medium transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 border border-border shadow-sm hover:shadow-md"
         >
           <FaLinkedinIn aria-hidden className="shrink-0" size={18} />
           LinkedIn
@@ -40,7 +40,7 @@ export default function Contact() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
-          className="inline-flex items-center gap-2 rounded-lg bg-surface text-primary px-5 py-3 font-medium transition hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          className="inline-flex items-center gap-2 rounded-lg bg-surface text-primary px-5 py-3 font-medium transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 border border-border shadow-sm hover:shadow-md"
         >
           <FaInstagram aria-hidden className="shrink-0" size={18} />
           Instagram
@@ -51,7 +51,7 @@ export default function Contact() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp"
-          className="inline-flex items-center gap-2 rounded-lg bg-surface text-primary px-5 py-3 font-medium transition hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          className="inline-flex items-center gap-2 rounded-lg bg-surface text-primary px-5 py-3 font-medium transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 border border-border shadow-sm hover:shadow-md"
           title="WhatsApp +961 81 309 837"
         >
           <FaWhatsapp aria-hidden className="shrink-0" size={18} />
