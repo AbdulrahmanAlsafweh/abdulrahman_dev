@@ -1,7 +1,6 @@
 const projects = [
   {
     title: "Mariam Jewels",
-    label: "Ecommerce",
     desc: "Live ecommerce storefront for a jewelry brand, focused on premium presentation and smooth shopping flows.",
     highlights: [
       "Luxury catalog experience",
@@ -15,7 +14,6 @@ const projects = [
   },
   {
     title: "Lightwave Ltd",
-    label: "Business",
     desc: "Corporate website for a business services company with a bilingual presentation and clear service narrative.",
     highlights: [
       "Arabic-first layout support",
@@ -29,7 +27,6 @@ const projects = [
   },
   {
     title: "Commerce Growth Platform",
-    label: "Ecommerce",
     desc: "Custom storefront experience with product discovery, checkout, and order workflows built for conversion.",
     highlights: [
       "Flexible product catalog with filters",
@@ -40,7 +37,6 @@ const projects = [
   },
   {
     title: "Portfolio Experience System",
-    label: "Portfolio",
     desc: "High-end personal website designed to attract clients, featuring fast performance and SEO foundations.",
     highlights: [
       "Responsive editorial layouts",
@@ -51,7 +47,6 @@ const projects = [
   },
   {
     title: "Business Operations Hub",
-    label: "Systems",
     desc: "Internal dashboard for teams to manage approvals, tasks, and reporting in one reliable workspace.",
     highlights: [
       "Role-based access and permissions",
@@ -101,12 +96,7 @@ export default function Projects() {
                 </a>
               ) : null}
 
-              <div className="flex items-center justify-between gap-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Case study</p>
-                <span className="rounded-full bg-secondary/10 px-3 py-1 text-xs font-semibold text-secondary">
-                  {project.label}
-                </span>
-              </div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Case study</p>
               <h3 className="mt-5 text-2xl font-semibold">{project.title}</h3>
               <p className="mt-3 text-sm text-muted">{project.desc}</p>
 
