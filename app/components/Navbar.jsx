@@ -2,96 +2,115 @@
 
 import { useState } from "react";
 
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#services", label: "Services" },
+  { href: "#projects", label: "Work" },
+  { href: "#skills", label: "Stack" },
+  { href: "#contact", label: "Contact" },
+];
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const toggle = () => setOpen((v) => !v);
+  const toggle = () => setOpen((value) => !value);
   const close = () => setOpen(false);
+
   return (
-    <nav className="fixed top-0 w-full bg-surface/80 backdrop-blur-md shadow z-50">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-        <h1 className="font-bold text-xl">
-          Abdulrahman<span className="text-primary">Safweh</span>
-        </h1>
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div className="mx-auto max-w-6xl px-6">
+        <nav className="mt-4 flex items-center justify-between rounded-full border border-border/70 bg-surface/80 px-4 py-3 shadow-[0_12px_30px_-20px_rgba(15,23,42,0.45)] backdrop-blur">
+          <a href="#" className="flex items-center gap-3">
+            <span className="grid h-10 w-10 place-items-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+              AS
+            </span>
+            <span className="hidden sm:block">
+              <span className="block text-sm font-semibold">Abdulrahman Safweh</span>
+              <span className="block text-[11px] uppercase tracking-[0.2em] text-muted">
+                Web and Systems Developer
+              </span>
+            </span>
+          </a>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex space-x-6 text-sm font-medium">
-          <a href="#about" className="hover:text-primary">
-            About
-          </a>
-          <a href="#skills" className="hover:text-primary">
-            Skills
-          </a>
-          <a href="#projects" className="hover:text-primary">
-            Projects
-          </a>
-          <a href="#services" className="hover:text-primary">
-            Services
-          </a>
-          <a href="#contact" className="hover:text-primary">
-            Contact
-          </a>
-        </div>
+          <div className="hidden lg:flex items-center gap-6 text-sm font-medium">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-muted transition hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
 
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          onClick={toggle}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
-          className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-foreground hover:text-primary hover:bg-foreground/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
-        >
-          {/* Icon: hamburger vs close */}
-          <svg
-            className="h-6 w-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <div className="flex items-center gap-3">
+            <a
+              href="#contact"
+              className="hidden sm:inline-flex items-center gap-2 rounded-full border border-border bg-foreground px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-background transition hover:-translate-y-0.5 hover:bg-foreground/90"
+            >
+              Start a Project
+            </a>
+            <button
+              type="button"
+              onClick={toggle}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? "Close menu" : "Open menu"}
+              className="lg:hidden inline-flex items-center justify-center rounded-full border border-border bg-surface/80 p-2 text-foreground shadow-sm transition hover:bg-surface"
+            >
+              <svg
+                className="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {open ? (
+                  <path
+                    d="M6 6l12 12M18 6L6 18"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                ) : (
+                  <path
+                    d="M4 6h16M4 12h16M4 18h16"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
+        </nav>
+
+        {open ? (
+          <div
+            id="mobile-menu"
+            className="mt-3 rounded-3xl border border-border bg-surface/95 p-5 shadow-lg lg:hidden"
           >
-            {open ? (
-              <path
-                d="M6 6l12 12M18 6L6 18"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            ) : (
-              <path
-                d="M4 6h16M4 12h16M4 18h16"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            )}
-          </svg>
-        </button>
-      </div>
-
-      {/* Mobile dropdown panel */}
-      {open ? (
-        <div
-          id="mobile-menu"
-          className="md:hidden absolute top-full inset-x-0 bg-surface border-t border-border shadow-lg px-6 py-4"
-        >
-          <div className="flex flex-col space-y-4 text-sm font-medium">
-            <a href="#about" onClick={close} className="hover:text-primary">
-              About
-            </a>
-            <a href="#skills" onClick={close} className="hover:text-primary">
-              Skills
-            </a>
-            <a href="#projects" onClick={close} className="hover:text-primary">
-              Projects
-            </a>
-            <a href="#services" onClick={close} className="hover:text-primary">
-              Services
-            </a>
-            <a href="#contact" onClick={close} className="hover:text-primary">
-              Contact
+            <div className="flex flex-col gap-3 text-sm font-medium">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={close}
+                  className="text-muted transition hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <a
+              href="#contact"
+              onClick={close}
+              className="mt-4 inline-flex w-full items-center justify-center rounded-full border border-border bg-foreground px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-background"
+            >
+              Start a Project
             </a>
           </div>
-        </div>
-      ) : null}
-    </nav>
+        ) : null}
+      </div>
+    </header>
   );
 }

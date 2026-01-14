@@ -1,62 +1,98 @@
 const services = [
   {
-    key: 'fullstack',
-    title: 'Full‑Stack Website (from zero)',
-    desc:
-      'Design, build, and deploy complete apps end‑to‑end: frontend, backend, database, and CI/CD.',
-    tags: ['Next.js', 'APIs', 'Auth', 'DB'],
+    key: "ecommerce",
+    title: "Ecommerce Websites",
+    desc: "Conversion-first storefronts with product catalogs, carts, checkout, and order flows.",
+    tags: ["Catalogs", "Checkout", "Operations"],
   },
   {
-    key: 'frontend',
-    title: 'Frontend for Ready Backend',
-    desc:
-      'Craft a modern, fast UI that integrates with your existing backend (REST/GraphQL).',
-    tags: ['React/Next', 'Integrations', 'UX'],
+    key: "portfolio",
+    title: "Portfolio and Personal Sites",
+    desc: "High-end personal sites that build authority and turn visitors into clients.",
+    tags: ["Branding", "SEO", "Performance"],
   },
   {
-    key: 'rebuild',
-    title: 'Website Rebuild & Modernization',
-    desc:
-      'Refresh outdated sites with new styling, accessibility, and performance (Core Web Vitals).',
-    tags: ['Redesign', 'A11y', 'Performance'],
+    key: "systems",
+    title: "Business Systems",
+    desc: "Dashboards, admin portals, and internal tools that keep teams aligned.",
+    tags: ["Dashboards", "Workflows", "Access"],
   },
   {
-    key: 'ai',
-    title: 'AI Automation Systems',
-    desc:
-      'Automate workflows using AI/LLMs for content, support, and data processing.',
-    tags: ['LLMs', 'Workflows', 'Integrations'],
+    key: "automation",
+    title: "Automation and Integrations",
+    desc: "Automate business processes with connected tools, reports, and data flows.",
+    tags: ["Integrations", "Reporting", "Efficiency"],
   },
 ];
 
 function ServiceIcon({ type }) {
-  const common = 'h-6 w-6';
+  const common = "h-6 w-6";
   switch (type) {
-    case 'fullstack':
+    case "ecommerce":
       return (
         <svg viewBox="0 0 24 24" fill="none" className={common}>
-          <path d="M3 5h18M3 12h18M3 19h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <path
+            d="M6 6h15l-1.5 9H7.5L6 6Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path d="M6 6H4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="9" cy="19" r="1.5" stroke="currentColor" strokeWidth="2" />
+          <circle cx="17" cy="19" r="1.5" stroke="currentColor" strokeWidth="2" />
         </svg>
       );
-    case 'frontend':
+    case "portfolio":
       return (
         <svg viewBox="0 0 24 24" fill="none" className={common}>
-          <rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" />
-          <path d="M8 21h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" />
+          <path
+            d="M7 9h10M7 13h6"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
         </svg>
       );
-    case 'rebuild':
+    case "systems":
       return (
         <svg viewBox="0 0 24 24" fill="none" className={common}>
-          <path d="M4 7h16M4 12h10M4 17h7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-          <path d="M17 16l3 3m0-3l-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <rect x="4" y="4" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="2" />
+          <rect x="13" y="4" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="2" />
+          <rect x="4" y="13" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="2" />
+          <rect x="13" y="13" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="2" />
         </svg>
       );
-    case 'ai':
+    case "automation":
       return (
         <svg viewBox="0 0 24 24" fill="none" className={common}>
-          <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
-          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <path
+            d="M4 12a8 8 0 0 1 13.66-5.66"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          <path
+            d="M20 12a8 8 0 0 1-13.66 5.66"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          <path
+            d="M17 5v4h-4"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M7 19v-4h4"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       );
     default:
@@ -66,45 +102,53 @@ function ServiceIcon({ type }) {
 
 export default function Services() {
   return (
-    <section id="services" className="bg-background py-20">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-10">
-          <p className="text-sm font-semibold tracking-wide text-primary uppercase">What I Offer</p>
-          <h2 className="text-3xl font-bold mt-2">Services</h2>
-          <p className="text-muted mt-2">Flexible delivery: from idea to production, or UI on top of your existing backend.</p>
+    <section id="services" className="py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Services</p>
+            <h2 className="mt-3 text-3xl font-semibold">Built for clients who want results.</h2>
+          </div>
+          <p className="text-sm text-muted sm:max-w-sm">
+            Flexible delivery from discovery to launch, tailored to your team and timeline.
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {services.map((s) => (
+        <div className="mt-10 grid gap-6 lg:grid-cols-4">
+          {services.map((service) => (
             <article
-              key={s.key}
-              className="group rounded-xl border border-border bg-surface p-6 shadow-sm hover:shadow-lg transition-transform duration-200 hover:-translate-y-1"
+              key={service.key}
+              className="group rounded-3xl border border-border bg-surface/85 p-6 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.45)] transition hover:-translate-y-1"
             >
               <div className="flex items-center gap-3">
-                <div className="grid place-items-center h-10 w-10 rounded-lg bg-primary/10 text-primary">
-                  <ServiceIcon type={s.key} />
+                <div className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary">
+                  <ServiceIcon type={service.key} />
                 </div>
-                <h3 className="font-semibold text-lg">{s.title}</h3>
+                <h3 className="text-lg font-semibold">{service.title}</h3>
               </div>
 
-              <p className="mt-3 text-sm text-muted leading-relaxed">{s.desc}</p>
+              <p className="mt-4 text-sm text-muted">{service.desc}</p>
 
-              {s.tags?.length ? (
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {s.tags.map((t) => (
-                    <span key={t} className="inline-flex items-center rounded-full bg-accent text-foreground/80 px-2.5 py-1 text-xs font-medium">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
+              <div className="mt-5 flex flex-wrap gap-2">
+                {service.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center rounded-full border border-border bg-background/70 px-3 py-1 text-xs font-semibold text-foreground/80"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </article>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <a href="#contact" className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-5 py-3 font-medium hover:opacity-90 transition">
-            Let’s discuss your project
+        <div className="mt-12 text-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-full border border-border bg-foreground px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-background transition hover:-translate-y-0.5 hover:bg-foreground/90"
+          >
+            Plan a project call
           </a>
         </div>
       </div>

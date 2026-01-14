@@ -10,12 +10,14 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Services />
-      <Contact />
+      <main>
+        <Hero />
+        <Services />
+        <Projects />
+        <About />
+        <Skills />
+        <Contact />
+      </main>
     </>
   )
 }

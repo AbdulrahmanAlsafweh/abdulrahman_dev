@@ -1,10 +1,24 @@
 import './globals.css'
 import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
+import { Fraunces, Manrope } from 'next/font/google'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://abdulrahman-dev-drab.vercel.app'
 const siteName = 'Abdulrahman Safweh | Portfolio'
-const siteDescription = 'Web Developer and Software Engineer specializing in Next.js, React, PHP (Laravel), and Flutter. Services include web development, web apps, and web agency solutions.'
+const siteDescription =
+  'Developer building customer-ready websites, ecommerce experiences, business systems, and automation. Specialized in Next.js, React, PHP, and Flutter.'
+
+const bodyFont = Manrope({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+})
+
+const displayFont = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -25,7 +39,10 @@ export const metadata: Metadata = {
     'full-stack developer',
     'freelance web developer',
     'web agency',
-    'portfolio'
+    'portfolio',
+    'ecommerce developer',
+    'business systems',
+    'automation'
   ],
   authors: [{ name: 'Abdulrahman Safweh', url: siteUrl }],
   creator: 'Abdulrahman Safweh',
@@ -83,7 +100,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     '@type': 'Person',
     name: 'Abdulrahman Safweh',
     url: siteUrl,
-    jobTitle: 'Web Developer',
+    jobTitle: 'Web and Systems Developer',
     sameAs: [
       // Add your real profiles if available
     ],
@@ -113,7 +130,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
       </head>
-      <body className="bg-background text-foreground">{children}</body>
+      <body className={`${bodyFont.variable} ${displayFont.variable} bg-background text-foreground antialiased`}>
+        {children}
+      </body>
     </html>
   )
 }
