@@ -1,29 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f2ea;
-  --foreground: #0f141a;
+  --background: #f5f7ff;
+  --foreground: #0e1324;
   --surface: #ffffff;
-  --muted: #5b6672;
-  --border: #e6dfd6;
-  --primary: #0f766e;
-  --primary-foreground: #f7f2ea;
-  --secondary: #b45309;
-  --secondary-foreground: #fff7ed;
-  --accent: #e9f5f3;
+  --muted: #5b6474;
+  --border: #e1e6f5;
+  --primary: #38bdf8;
+  --primary-foreground: #08111f;
+  --secondary: #8b5cf6;
+  --secondary-foreground: #f8f5ff;
+  --accent: #eef1ff;
 }
 
 html[data-theme="dark"] {
-  --background: #0b0f14;
-  --foreground: #f5f2ea;
-  --surface: #11161c;
-  --muted: #aab1bb;
-  --border: #1f262f;
-  --accent: #0f2422;
-  --primary: #38b2ac;
-  --primary-foreground: #081312;
-  --secondary: #f59e0b;
-  --secondary-foreground: #1f1302;
+  --background: #0b1020;
+  --foreground: #eef2ff;
+  --surface: #11182b;
+  --muted: #aab2c6;
+  --border: #1f2a44;
+  --accent: #131d38;
+  --primary: #47c8ff;
+  --primary-foreground: #08121f;
+  --secondary: #a78bfa;
+  --secondary-foreground: #110b1f;
 }
 
 @theme inline {
@@ -56,16 +56,16 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   background-image:
-    radial-gradient(1200px circle at 10% -10%, rgba(15, 118, 110, 0.12), transparent 55%),
-    radial-gradient(900px circle at 90% 0%, rgba(255, 230, 186, 0.5), transparent 50%),
-    linear-gradient(180deg, rgba(247, 242, 234, 0.95) 0%, rgba(247, 242, 234, 1) 60%, rgba(244, 238, 229, 1) 100%);
+    radial-gradient(1100px circle at 10% -15%, rgba(56, 189, 248, 0.18), transparent 55%),
+    radial-gradient(900px circle at 90% 0%, rgba(139, 92, 246, 0.16), transparent 55%),
+    linear-gradient(180deg, rgba(245, 247, 255, 0.95) 0%, rgba(245, 247, 255, 1) 60%, rgba(238, 241, 255, 1) 100%);
 }
 
 html[data-theme="dark"] body {
   background-image:
-    radial-gradient(1200px circle at 10% -10%, rgba(56, 178, 172, 0.12), transparent 55%),
-    radial-gradient(900px circle at 90% 0%, rgba(8, 19, 18, 0.6), transparent 50%),
-    linear-gradient(180deg, rgba(11, 15, 20, 0.95) 0%, rgba(11, 15, 20, 1) 60%, rgba(8, 12, 16, 1) 100%);
+    radial-gradient(1100px circle at 10% -10%, rgba(71, 200, 255, 0.14), transparent 55%),
+    radial-gradient(900px circle at 90% 0%, rgba(167, 139, 250, 0.16), transparent 55%),
+    linear-gradient(180deg, rgba(11, 16, 32, 0.96) 0%, rgba(11, 16, 32, 1) 60%, rgba(9, 13, 26, 1) 100%);
 }
 
 html[data-theme="dark"] {
@@ -74,24 +74,24 @@ html[data-theme="dark"] {
 
 @media (prefers-color-scheme: dark) {
   html:not([data-theme]) {
-    --background: #0b0f14;
-    --foreground: #f5f2ea;
-    --surface: #11161c;
-    --muted: #aab1bb;
-    --border: #1f262f;
-    --accent: #0f2422;
-    --primary: #38b2ac;
-    --primary-foreground: #081312;
-    --secondary: #f59e0b;
-    --secondary-foreground: #1f1302;
+    --background: #0b1020;
+    --foreground: #eef2ff;
+    --surface: #11182b;
+    --muted: #aab2c6;
+    --border: #1f2a44;
+    --accent: #131d38;
+    --primary: #47c8ff;
+    --primary-foreground: #08121f;
+    --secondary: #a78bfa;
+    --secondary-foreground: #110b1f;
     color-scheme: dark;
   }
 
   html:not([data-theme]) body {
     background-image:
-      radial-gradient(1200px circle at 10% -10%, rgba(56, 178, 172, 0.12), transparent 55%),
-      radial-gradient(900px circle at 90% 0%, rgba(8, 19, 18, 0.6), transparent 50%),
-      linear-gradient(180deg, rgba(11, 15, 20, 0.95) 0%, rgba(11, 15, 20, 1) 60%, rgba(8, 12, 16, 1) 100%);
+      radial-gradient(1100px circle at 10% -10%, rgba(71, 200, 255, 0.14), transparent 55%),
+      radial-gradient(900px circle at 90% 0%, rgba(167, 139, 250, 0.16), transparent 55%),
+      linear-gradient(180deg, rgba(11, 16, 32, 0.96) 0%, rgba(11, 16, 32, 1) 60%, rgba(9, 13, 26, 1) 100%);
   }
 }
 
