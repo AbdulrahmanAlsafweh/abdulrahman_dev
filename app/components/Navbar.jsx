@@ -21,13 +21,6 @@ export default function Navbar() {
       <div className="mx-auto max-w-6xl px-6">
         <nav className="mt-4 flex items-center justify-between rounded-full border border-border/70 bg-surface/80 px-4 py-3 shadow-[0_12px_30px_-20px_rgba(15,23,42,0.45)] backdrop-blur">
           <a href="#" className="flex items-center gap-3">
-            <span className="grid h-12 w-12 place-items-center rounded-full">
-              <img
-                src="/icon.png"
-                alt="Abdulrahman Safweh logo"
-                className="h-9 w-9"
-              />
-            </span>
             <span className="hidden sm:block">
               <span className="block text-sm font-semibold">Abdulrahman Safweh</span>
               <span className="block text-[11px] uppercase tracking-[0.2em] text-muted">
