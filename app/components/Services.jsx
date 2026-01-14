@@ -194,8 +194,10 @@ export default function Services() {
                 <ol className="mt-4 space-y-4 border-l border-border/70 pl-4 text-sm">
                   {service.steps.map((step, index) => (
                     <li key={step.title} className="relative">
-                      <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full border border-border bg-surface" />
-                      <p className="text-sm font-semibold text-foreground">{step.title}</p>
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted/70">
+                        Phase {index + 1}
+                      </p>
+                      <p className="mt-2 text-sm font-semibold text-foreground">{step.title}</p>
                       <p className="mt-1 text-xs text-muted">{step.detail}</p>
                     </li>
                   ))}
