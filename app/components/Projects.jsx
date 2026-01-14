@@ -72,7 +72,7 @@ export default function Projects() {
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {projects.map((project, index) => (
+          {projects.filter((project) => project.url).map((project, index) => (
             <article
               key={project.title}
               data-reveal="fade-up"
