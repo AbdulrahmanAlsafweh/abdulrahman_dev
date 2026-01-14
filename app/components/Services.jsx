@@ -4,24 +4,44 @@ const services = [
     title: "Ecommerce Websites",
     desc: "Conversion-first storefronts with product catalogs, carts, checkout, and order flows.",
     tags: ["Catalogs", "Checkout", "Operations"],
+    steps: [
+      "Requirements and product scope",
+      "Figma UI/UX design",
+      "Build, launch, and handoff",
+    ],
   },
   {
     key: "portfolio",
     title: "Portfolio and Personal Sites",
     desc: "High-end personal sites that build authority and turn visitors into clients.",
     tags: ["Branding", "SEO", "Performance"],
+    steps: [
+      "Discovery and content plan",
+      "Figma UI/UX design",
+      "Build, launch, and optimize",
+    ],
   },
   {
     key: "systems",
     title: "Business Systems",
     desc: "Dashboards, admin portals, and internal tools that keep teams aligned.",
     tags: ["Dashboards", "Workflows", "Access"],
+    steps: [
+      "Process mapping and requirements",
+      "Wireframes and prototype",
+      "Build, integrate, and train",
+    ],
   },
   {
     key: "automation",
     title: "Automation and Integrations",
     desc: "Automate business processes with connected tools, reports, and data flows.",
     tags: ["Integrations", "Reporting", "Efficiency"],
+    steps: [
+      "Workflow audit and goals",
+      "Automation design and testing",
+      "Implementation and monitoring",
+    ],
   },
 ];
 
@@ -128,6 +148,22 @@ export default function Services() {
               </div>
 
               <p className="mt-4 text-sm text-muted">{service.desc}</p>
+
+              <div className="mt-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+                  Steps
+                </p>
+                <ol className="mt-3 space-y-2 text-sm text-foreground/80">
+                  {service.steps.map((step, index) => (
+                    <li key={step} className="flex items-start gap-2">
+                      <span className="mt-1 grid h-5 w-5 place-items-center rounded-full border border-border bg-background text-[10px] font-semibold text-muted">
+                        {index + 1}
+                      </span>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
 
               <div className="mt-5 flex flex-wrap gap-2">
                 {service.tags.map((tag) => (
