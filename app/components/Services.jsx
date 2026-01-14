@@ -170,14 +170,14 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-2">
           {services.map((service) => (
             <article
               key={service.key}
               className="group rounded-3xl border border-border bg-surface/85 p-6 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.45)] transition hover:-translate-y-1"
             >
               <div className="flex items-center gap-3">
-                <div className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary">
+                <div className="grid h-11 w-11 place-items-center rounded-full bg-primary/10 text-primary">
                   <ServiceIcon type={service.key} />
                 </div>
                 <h3 className="text-lg font-semibold">{service.title}</h3>
@@ -192,30 +192,12 @@ export default function Services() {
                 <ol className="mt-4 space-y-4 border-l border-border/70 pl-4 text-sm">
                   {service.steps.map((step, index) => (
                     <li key={step.title} className="relative">
-                      <span className="absolute -left-[11px] top-0 grid h-6 w-6 place-items-center rounded-full border border-border bg-surface text-[10px] font-semibold text-muted">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-                        Phase {String(index + 1).padStart(2, "0")}
-                      </p>
-                      <p className="mt-2 text-sm font-semibold text-foreground">
-                        {step.title}
-                      </p>
+                      <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full border border-border bg-surface" />
+                      <p className="text-sm font-semibold text-foreground">{step.title}</p>
                       <p className="mt-1 text-xs text-muted">{step.detail}</p>
                     </li>
                   ))}
                 </ol>
-              </div>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {service.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-flex items-center rounded-full border border-border bg-background/70 px-3 py-1 text-xs font-semibold text-foreground/80"
-                  >
-                    {tag}
-                  </span>
-                ))}
               </div>
             </article>
           ))}
