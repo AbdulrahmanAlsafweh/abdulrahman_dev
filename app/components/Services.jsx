@@ -5,9 +5,18 @@ const services = [
     desc: "Conversion-first storefronts with product catalogs, carts, checkout, and order flows.",
     tags: ["Catalogs", "Checkout", "Operations"],
     steps: [
-      "Requirements and product scope",
-      "Figma UI/UX design",
-      "Build, launch, and handoff",
+      {
+        title: "Discovery and requirements",
+        detail: "Define products, catalog structure, payments, and logistics.",
+      },
+      {
+        title: "UX/UI design in Figma",
+        detail: "Design storefront, product, cart, and checkout journeys.",
+      },
+      {
+        title: "Build, QA, launch",
+        detail: "Develop, test, deploy, and provide handoff documentation.",
+      },
     ],
   },
   {
@@ -16,9 +25,18 @@ const services = [
     desc: "High-end personal sites that build authority and turn visitors into clients.",
     tags: ["Branding", "SEO", "Performance"],
     steps: [
-      "Discovery and content plan",
-      "Figma UI/UX design",
-      "Build, launch, and optimize",
+      {
+        title: "Positioning and content",
+        detail: "Clarify brand story, case studies, and content structure.",
+      },
+      {
+        title: "UX/UI design in Figma",
+        detail: "Create layouts that highlight work and expertise.",
+      },
+      {
+        title: "Build, SEO, launch",
+        detail: "Implement, optimize, and ship with performance in mind.",
+      },
     ],
   },
   {
@@ -27,9 +45,18 @@ const services = [
     desc: "Dashboards, admin portals, and internal tools that keep teams aligned.",
     tags: ["Dashboards", "Workflows", "Access"],
     steps: [
-      "Process mapping and requirements",
-      "Wireframes and prototype",
-      "Build, integrate, and train",
+      {
+        title: "Process mapping",
+        detail: "Map roles, permissions, data flows, and reporting needs.",
+      },
+      {
+        title: "Prototype and validation",
+        detail: "Align on flows with clickable prototypes.",
+      },
+      {
+        title: "Build, integrate, train",
+        detail: "Implement, connect systems, and onboard teams.",
+      },
     ],
   },
   {
@@ -38,9 +65,18 @@ const services = [
     desc: "Automate business processes with connected tools, reports, and data flows.",
     tags: ["Integrations", "Reporting", "Efficiency"],
     steps: [
-      "Workflow audit and goals",
-      "Automation design and testing",
-      "Implementation and monitoring",
+      {
+        title: "Workflow audit",
+        detail: "Identify bottlenecks and define automation targets.",
+      },
+      {
+        title: "Automation design",
+        detail: "Design triggers, data mapping, and testing plan.",
+      },
+      {
+        title: "Implementation and monitoring",
+        detail: "Deploy, monitor results, and refine over time.",
+      },
     ],
   },
 ];
@@ -151,15 +187,21 @@ export default function Services() {
 
               <div className="mt-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-                  Steps
+                  Delivery Steps
                 </p>
-                <ol className="mt-3 space-y-2 text-sm text-foreground/80">
+                <ol className="mt-4 space-y-4 border-l border-border/70 pl-4 text-sm">
                   {service.steps.map((step, index) => (
-                    <li key={step} className="flex items-start gap-2">
-                      <span className="mt-1 grid h-5 w-5 place-items-center rounded-full border border-border bg-background text-[10px] font-semibold text-muted">
-                        {index + 1}
+                    <li key={step.title} className="relative">
+                      <span className="absolute -left-[11px] top-0 grid h-6 w-6 place-items-center rounded-full border border-border bg-surface text-[10px] font-semibold text-muted">
+                        {String(index + 1).padStart(2, "0")}
                       </span>
-                      <span>{step}</span>
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+                        Phase {String(index + 1).padStart(2, "0")}
+                      </p>
+                      <p className="mt-2 text-sm font-semibold text-foreground">
+                        {step.title}
+                      </p>
+                      <p className="mt-1 text-xs text-muted">{step.detail}</p>
                     </li>
                   ))}
                 </ol>
