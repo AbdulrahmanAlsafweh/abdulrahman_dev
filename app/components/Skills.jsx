@@ -36,9 +36,11 @@ export default function Skills() {
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {skillGroups.map((group) => (
+          {skillGroups.map((group, index) => (
             <div
               key={group.title}
+              data-reveal="fade-up"
+              style={{ "--reveal-delay": `${index * 0.08}s` }}
               className="rounded-2xl border border-border bg-surface/80 p-5 shadow-[0_14px_40px_-30px_rgba(15,23,42,0.4)]"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">

@@ -77,9 +77,11 @@ export default function Projects() {
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <article
               key={project.title}
+              data-reveal="fade-up"
+              style={{ "--reveal-delay": `${index * 0.08}s` }}
               className="group rounded-3xl border border-border bg-surface/85 p-6 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.5)] transition hover:-translate-y-1"
             >
               {project.image ? (
@@ -101,7 +103,7 @@ export default function Projects() {
 
               <div className="flex items-center justify-between gap-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Case study</p>
-                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                <span className="rounded-full bg-secondary/10 px-3 py-1 text-xs font-semibold text-secondary">
                   {project.label}
                 </span>
               </div>
@@ -133,7 +135,7 @@ export default function Projects() {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center text-sm font-semibold text-primary transition hover:text-primary/80"
+                  className="mt-6 inline-flex items-center text-sm font-semibold text-secondary transition hover:text-secondary/80"
                 >
                   Visit project
                 </a>

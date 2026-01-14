@@ -171,9 +171,11 @@ export default function Services() {
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <article
               key={service.key}
+              data-reveal="fade-up"
+              style={{ "--reveal-delay": `${index * 0.08}s` }}
               className="group rounded-3xl border border-border bg-surface/85 p-6 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.45)] transition hover:-translate-y-1"
             >
               <div className="flex items-center gap-3">
@@ -206,7 +208,7 @@ export default function Services() {
         <div className="mt-12 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-full border border-primary/40 bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground shadow-[0_18px_40px_-28px_rgba(15,118,110,0.8)] transition hover:-translate-y-0.5 hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-full border border-secondary/40 bg-secondary px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-secondary-foreground shadow-[0_18px_40px_-28px_rgba(180,83,9,0.6)] transition hover:-translate-y-0.5 hover:bg-secondary/90"
           >
             Plan a project call
           </a>

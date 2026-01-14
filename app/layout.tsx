@@ -2,6 +2,7 @@ import './globals.css'
 import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Fraunces, Manrope } from 'next/font/google'
+import RevealOnScroll from './components/RevealOnScroll'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://abdulrahman-dev-drab.vercel.app'
 const siteName = 'Abdulrahman Safweh | Portfolio'
@@ -25,8 +26,13 @@ const themeInitScript = `
   try {
     const stored = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const theme = stored === 'light' || stored === 'dark' ? stored : (prefersDark ? 'dark' : 'light');
-    document.documentElement.dataset.theme = theme;
+    const root = document.documentElement;
+    root.dataset.theme = theme;
+    if (!reduceMotion) {
+      root.dataset.revealReady = 'true';
+    }
   } catch (error) {
     document.documentElement.dataset.theme = 'light';
   }
@@ -145,6 +151,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className={`${bodyFont.variable} ${displayFont.variable} bg-background text-foreground antialiased`}>
+        <RevealOnScroll />
         {children}
       </body>
     </html>

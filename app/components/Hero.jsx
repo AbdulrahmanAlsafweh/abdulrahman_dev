@@ -41,7 +41,7 @@ export default function Hero() {
       />
       <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+          <span className="inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
             Available for client projects
           </span>
           <h1 className="mt-6 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
