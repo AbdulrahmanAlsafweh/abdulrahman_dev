@@ -146,7 +146,7 @@ export default function Services() {
         <div className="mt-12 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-full border border-border bg-foreground px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-background transition hover:-translate-y-0.5 hover:bg-foreground/90"
+            className="inline-flex items-center justify-center rounded-full border border-primary/40 bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground shadow-[0_18px_40px_-28px_rgba(15,118,110,0.8)] transition hover:-translate-y-0.5 hover:bg-primary/90"
           >
             Plan a project call
           </a>
