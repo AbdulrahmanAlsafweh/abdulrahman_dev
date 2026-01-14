@@ -39,6 +39,19 @@ const projects = [
       "https://s0.wp.com/mshots/v1/https%3A%2F%2Fqahwanajd.vercel.app%2F?w=1200",
   },
   {
+    title: "Muhfizun",
+    desc: "Educational website with clear course navigation and a calm, trustworthy brand presence.",
+    highlights: [
+      "Structured content hierarchy",
+      "Readable typography and layout",
+      "Responsive design for all devices",
+    ],
+    tags: ["Education", "UX", "Brand"],
+    url: "https://muhfizun.com/",
+    image:
+      "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmuhfizun.com%2F?w=1200",
+  },
+  {
     title: "Commerce Growth Platform",
     desc: "Custom storefront experience with product discovery, checkout, and order workflows built for conversion.",
     highlights: [
