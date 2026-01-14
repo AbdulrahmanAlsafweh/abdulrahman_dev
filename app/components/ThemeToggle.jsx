@@ -16,11 +16,13 @@ export default function ThemeToggle({ className = "" }) {
 
     if (isValidTheme(initial)) {
       root.dataset.theme = initial;
+      root.style.colorScheme = initial;
       setTheme(initial);
     } else {
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       const nextTheme = prefersDark ? "dark" : "light";
       root.dataset.theme = nextTheme;
+      root.style.colorScheme = nextTheme;
       setTheme(nextTheme);
     }
 
@@ -30,6 +32,7 @@ export default function ThemeToggle({ className = "" }) {
   const toggleTheme = () => {
     const nextTheme = theme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.style.colorScheme = nextTheme;
     localStorage.setItem("theme", nextTheme);
     setTheme(nextTheme);
   };

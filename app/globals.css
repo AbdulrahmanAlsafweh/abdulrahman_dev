@@ -45,6 +45,7 @@ html[data-theme="dark"] {
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
@@ -67,6 +68,10 @@ html[data-theme="dark"] body {
     linear-gradient(180deg, rgba(11, 15, 20, 0.95) 0%, rgba(11, 15, 20, 1) 60%, rgba(8, 12, 16, 1) 100%);
 }
 
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 @media (prefers-color-scheme: dark) {
   html:not([data-theme]) {
     --background: #0b0f14;
@@ -79,6 +84,7 @@ html[data-theme="dark"] body {
     --primary-foreground: #081312;
     --secondary: #f59e0b;
     --secondary-foreground: #1f1302;
+    color-scheme: dark;
   }
 
   html:not([data-theme]) body {

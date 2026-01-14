@@ -30,11 +30,14 @@ const themeInitScript = `
     const theme = stored === 'light' || stored === 'dark' ? stored : (prefersDark ? 'dark' : 'light');
     const root = document.documentElement;
     root.dataset.theme = theme;
+    root.style.colorScheme = theme;
     if (!reduceMotion) {
       root.dataset.revealReady = 'true';
     }
   } catch (error) {
-    document.documentElement.dataset.theme = 'light';
+    const root = document.documentElement;
+    root.dataset.theme = 'light';
+    root.style.colorScheme = 'light';
   }
 })();
 `
