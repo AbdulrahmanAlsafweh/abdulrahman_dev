@@ -83,14 +83,20 @@ export default function Projects() {
               className="group rounded-3xl border border-border bg-surface/85 p-6 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.5)] transition hover:-translate-y-1"
             >
               {project.image ? (
-                <div className="overflow-hidden rounded-2xl border border-border bg-background/80">
+                <a
+                  href={project.url || "#"}
+                  target={project.url ? "_blank" : undefined}
+                  rel={project.url ? "noopener noreferrer" : undefined}
+                  className="block overflow-hidden rounded-2xl border border-border bg-background/80"
+                  aria-label={`${project.title} homepage`}
+                >
                   <img
                     src={project.image}
                     alt={`${project.title} homepage`}
                     className="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]"
                     loading="lazy"
                   />
-                </div>
+                </a>
               ) : null}
 
               <div className="flex items-center justify-between gap-4">
