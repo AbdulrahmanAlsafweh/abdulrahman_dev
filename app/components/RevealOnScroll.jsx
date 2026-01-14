@@ -11,7 +11,7 @@ export default function RevealOnScroll() {
 
     const root = document.documentElement;
     if (root.dataset.revealReady !== "true") {
-      return;
+      root.dataset.revealReady = "true";
     }
 
     const elements = Array.from(document.querySelectorAll("[data-reveal]"));
