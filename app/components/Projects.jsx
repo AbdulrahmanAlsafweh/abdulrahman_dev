@@ -34,9 +34,9 @@ const projects = [
       "Mobile-first performance",
     ],
     tags: ["Brand", "Hospitality", "UX"],
-    url: "https://qahwanajd-git-main-abdulrahmanalsafwehs-projects.vercel.app/",
+    url: "https://qahwanajd.vercel.app/",
     image:
-      "https://s0.wp.com/mshots/v1/https%3A%2F%2Fqahwanajd-git-main-abdulrahmanalsafwehs-projects.vercel.app%2F?w=1200",
+      "https://s0.wp.com/mshots/v1/https%3A%2F%2Fqahwanajd.vercel.app%2F?w=1200",
   },
   {
     title: "Commerce Growth Platform",
