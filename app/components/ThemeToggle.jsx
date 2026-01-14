@@ -43,9 +43,9 @@ export default function ThemeToggle({ className = "" }) {
       onClick={toggleTheme}
       aria-pressed={theme === "dark"}
       aria-label={`Switch to ${nextLabel} mode`}
-      className={`inline-flex items-center gap-2 rounded-full border border-border bg-surface/80 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground transition hover:-translate-y-0.5 hover:bg-surface ${mounted ? "" : "opacity-0 pointer-events-none"} ${className}`}
+      className={`inline-flex items-center gap-3 rounded-full border border-border bg-foreground px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-background transition hover:-translate-y-0.5 hover:bg-foreground/90 ${mounted ? "" : "opacity-0 pointer-events-none"} ${className}`}
     >
-      <span className="grid h-8 w-8 place-items-center rounded-full bg-foreground text-background">
+      <span className="grid h-8 w-8 place-items-center rounded-full bg-background text-foreground">
         {theme === "dark" ? (
           <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor">
             <path
@@ -66,7 +66,7 @@ export default function ThemeToggle({ className = "" }) {
           </svg>
         )}
       </span>
-      <span className="hidden sm:inline">{label}</span>
+      <span className="leading-none">{label}</span>
     </button>
   );
 }
