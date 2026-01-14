@@ -20,6 +20,19 @@ const displayFont = Fraunces({
   display: 'swap',
 })
 
+const themeInitScript = `
+(() => {
+  try {
+    const stored = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = stored === 'light' || stored === 'dark' ? stored : (prefersDark ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+  } catch (error) {
+    document.documentElement.dataset.theme = 'light';
+  }
+})();
+`
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -121,6 +134,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
