@@ -84,7 +84,7 @@ export default function Hero() {
             <div className="flex items-center justify-between gap-4">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Delivery plan</p>
               <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                End-to-end
+                Full service
               </span>
             </div>
             <h2 className="mt-5 text-2xl font-semibold">Launch-ready, polished, and scalable.</h2>
