@@ -10,6 +10,22 @@ const projects = [
     ],
     tags: ["Ecommerce", "Brand", "UX"],
     url: "https://mariamjewels.com/",
+    image:
+      "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmariamjewels.com%2F?w=1200",
+  },
+  {
+    title: "Lightwave Ltd",
+    label: "Business",
+    desc: "Corporate website for a business services company with a bilingual presentation and clear service narrative.",
+    highlights: [
+      "Arabic-first layout support",
+      "Structured service storytelling",
+      "Responsive desktop and mobile layout",
+    ],
+    tags: ["Corporate", "Bilingual", "UX"],
+    url: "https://lightwaveltd.com/ar",
+    image:
+      "https://s0.wp.com/mshots/v1/https%3A%2F%2Flightwaveltd.com%2Far?w=1200",
   },
   {
     title: "Commerce Growth Platform",
@@ -66,6 +82,17 @@ export default function Projects() {
               key={project.title}
               className="group rounded-3xl border border-border bg-surface/85 p-6 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.5)] transition hover:-translate-y-1"
             >
+              {project.image ? (
+                <div className="overflow-hidden rounded-2xl border border-border bg-background/80">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} homepage`}
+                    className="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                </div>
+              ) : null}
+
               <div className="flex items-center justify-between gap-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Case study</p>
                 <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
