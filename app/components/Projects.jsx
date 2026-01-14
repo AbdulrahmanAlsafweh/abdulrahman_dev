@@ -26,6 +26,19 @@ const projects = [
       "https://s0.wp.com/mshots/v1/https%3A%2F%2Flightwaveltd.com%2Far?w=1200",
   },
   {
+    title: "Qahwa Najd",
+    desc: "Modern cafe website with menu highlights and a smooth browsing experience for customers.",
+    highlights: [
+      "Clean homepage storytelling",
+      "Menu-focused layout",
+      "Mobile-first performance",
+    ],
+    tags: ["Brand", "Hospitality", "UX"],
+    url: "https://qahwanajd-git-main-abdulrahmanalsafwehs-projects.vercel.app/",
+    image:
+      "https://s0.wp.com/mshots/v1/https%3A%2F%2Fqahwanajd-git-main-abdulrahmanalsafwehs-projects.vercel.app%2F?w=1200",
+  },
+  {
     title: "Commerce Growth Platform",
     desc: "Custom storefront experience with product discovery, checkout, and order workflows built for conversion.",
     highlights: [
